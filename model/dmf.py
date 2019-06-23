@@ -37,6 +37,14 @@ class DMF(DMFRec):
 
     def __build_nets(self):
         def fc_bn(x, dropout, out_size, activation_fn=None, norm=False):
+            """
+            :param x: input tensor
+            :param dropout: dropout rate, which should be keep_prob at current version
+            :param out_size: the number of neurons of current fully connected layer
+            :param activation_fn: assigned activation function (ReLU, Tanh, Sigmoid)
+            :param norm: should use batch normalization or not
+            :return: return the output tensor of this layer collection
+            """
             layer = slim.dropout(x, dropout)
             layer = slim.fully_connected(layer, out_size, activation_fn=None,
                                          weights_initializer=tf.truncated_normal_initializer(stddev=0.01),

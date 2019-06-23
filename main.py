@@ -9,8 +9,8 @@ from processing.handler import Handler
 
 FLAGS = tf.flags.FLAGS
 
-tf.flags.DEFINE_string('train_path', './data/ml-100k/u1.base', 'training set path')
-tf.flags.DEFINE_string('test_path', './data/ml-100k/u1.test', 'testing set path')
+tf.flags.DEFINE_string('train_path', './data/ml-100k/ub.base', 'training set path')
+tf.flags.DEFINE_string('test_path', './data/ml-100k/ub.test', 'testing set path')
 tf.flags.DEFINE_integer('k', 100, 'low dimension rank')
 tf.flags.DEFINE_float('threshold', 1e-4, 'convergence threshold')
 tf.flags.DEFINE_boolean('binary', False, 'entry value is binary or not')
